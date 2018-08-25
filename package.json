@@ -1,0 +1,34 @@
+{
+  "name": "kubernetes-github-webhook-authn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "kala"
+  },
+  "keywords": [
+    "kubernetes",
+    "github",
+    "auth",
+    "authn",
+    "webhook",
+    "teams",
+    "groups",
+    "rbac"
+  ],
+  "author": "Rauno Viskus",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3",
+    "octonode": "^0.9.3",
+    "pino": "^5.3.1"
+  },
+  "devDependencies": {
+    "jest": "^23.5.0"
+  }
+}
