@@ -14,16 +14,16 @@ const createResponse = (authenticated, { username, groups } = {}) => {
 	}
 
 	return {
-    apiVersion: 'authentication.k8s.io/v1beta1',
-    kind: 'TokenReview',
-    status: {
-      authenticated: true,
-      user: {
-        username: username,
-        groups: Array.isArray(groups) ? groups : undefined,
-      }
-    }
-  };
+		apiVersion: 'authentication.k8s.io/v1beta1',
+		kind: 'TokenReview',
+		status: {
+			authenticated: true,
+			user: {
+				username: username,
+				groups: Array.isArray(groups) ? groups : undefined,
+			}
+		}
+	};
 };
 
 const parseUserResponse = ([status, body, headers]) => {
@@ -54,19 +54,19 @@ const handleNoTeamAccess = (err) => {
 };
 
 const fetchUserData = (token) => {
-  const client = github.client(token);
+	const client = github.client(token);
 
-  return Promise.all([
-	  client.getAsync('/user', {}).then(parseUserResponse),
-	  client.getAsync('/user/teams', { per_page: 100 })
-	  	.then(parseTeamResponse)
-	  	.catch(handleNoTeamAccess),
-  ]).then(([ username, groups]) => {
-  	return {
-  		username,
-  		groups,
-  	};
-  });
+	return Promise.all([
+		client.getAsync('/user', {}).then(parseUserResponse),
+		client.getAsync('/user/teams', { per_page: 100 })
+			.then(parseTeamResponse)
+			.catch(handleNoTeamAccess),
+	]).then(([ username, groups]) => {
+		return {
+			username,
+			groups,
+		};
+	});
 };
 
 module.exports = {

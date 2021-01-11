@@ -1,4 +1,3 @@
-
 const config = {};
 
 if (typeof process.env.ASSERT_TEAM_ORGANIZATION === 'string') {
