@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "test": "npm test"
+    "test": "echo no tests; exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "kala"
+    "url": "https://github.com/Rauno56/kubernetes-github-authn/"
   },
   "keywords": [
     "kubernetes",
@@ -24,11 +24,9 @@
   "author": "Rauno Viskus",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.16.3",
-    "octonode": "^0.9.3",
-    "pino": "^5.3.1"
+    "express": "^4.17.1",
+    "octonode": "^0.10.0",
+    "pino": "^6.10.0"
   },
-  "devDependencies": {
-    "jest": "^23.5.0"
-  }
+  "devDependencies": {}
 }
