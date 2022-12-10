@@ -24,7 +24,7 @@
   "author": "Rauno Viskus",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "octonode": "^0.10.0",
     "pino": "^6.10.0"
   },
